@@ -1,0 +1,4555 @@
+{
+	"info": {
+		"_postman_id": "40848f2f-8479-4e78-a73b-0c87f969e302",
+		"name": "LMS_BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39129716"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin/Employee LOGIN",
+					"item": [
+						{
+							"name": "Register Employee/Admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Teacher",
+											"type": "text"
+										},
+										{
+											"key": "mobile_number",
+											"value": "345678913",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "teacher@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Abc@12345",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Abc@12345",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "profile_photo",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Employee/Admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Employee",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "admin1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "accountant@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "Abc@12345",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Banglore@123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role_id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Profile Based on Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIzNTYwMjksImV4cCI6MTczMjM1OTYyOSwibmJmIjoxNzMyMzU2MDI5LCJqdGkiOiJsSEhwbEx3amNhdVJZSzFNIiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Z-f-huUe4FDA5CL9V_8u0lmjnKQwwmpN6WMr0uzaXnk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/user_profile",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"user_profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout User Based on Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIzNTQwNDUsImV4cCI6MTczMjM1NzY0NSwibmJmIjoxNzMyMzU0MDQ1LCJqdGkiOiJZYTVSUFhXWTdQZ2xyTERXIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.ErSa91bAhZJYQWmj0q_WgFGlajraaSj93tH3TNRRbfM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Data/Settings Admin/Staff",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2OTI3NDIsImV4cCI6MTczMjY5NjM0MiwibmJmIjoxNzMyNjkyNzQyLCJqdGkiOiJOVms4alh1cUFNTzJBazZ3Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.ENcb2Zyp1bzMFPQwylNHHrPbjODtsbwcCTegxulfr7U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile_number",
+											"value": "1234567891",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Abc@12345",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Abc@12345",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Accountant",
+											"type": "text"
+										},
+										{
+											"key": "profile_photo",
+											"type": "file",
+											"src": "/C:/Users/pragn/Downloads/p1.jpg"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI3MDEyOTQsImV4cCI6MTczMjcwNDg5NCwibmJmIjoxNzMyNzAxMjk0LCJqdGkiOiJVQzY3Rm9VcDZvOGhjWW9vIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.5GDVmn611usrXU8wCduXE6HYdTBJB9NMKxMLA1ck6yc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get_by_id/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get_by_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Student Register/Login",
+					"item": [
+						{
+							"name": "Student Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Abc",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "7888776656",
+											"type": "text"
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": "/C:/Users/pragn/Downloads/profile1.jpg"
+										},
+										{
+											"key": "email",
+											"value": "abc@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum accumsan diam nec tincidunt. Proin eget tincidunt erat. Nulla quis nunc laoreet, ultrices dui fermentum, aliquam lectus",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Lorem ipsum",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "dolor sit",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": " consectetur adipiscing elit",
+											"type": "text"
+										},
+										{
+											"key": "zip",
+											"value": "234567",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "student@123",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "student@123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/student/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"student",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "1234567890",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Likitha@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "Likki@2024",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/student/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"student",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Mail For Forget Password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "pragna.techminds@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/password/email",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"password",
+										"email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/password/reset?token=68f6db99e310692f3027b5f13e7d619d3e4b03ec4acab55f3f817f6c7a96fe9b&email=pragna.techminds%40gmail.com",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"password",
+										"reset"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "68f6db99e310692f3027b5f13e7d619d3e4b03ec4acab55f3f817f6c7a96fe9b"
+										},
+										{
+											"key": "email",
+											"value": "pragna.techminds%40gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update / Data Setting Students",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3N0dWRlbnQvbG9naW4iLCJpYXQiOjE3MzIzMzgzNTEsImV4cCI6MTczMjM0MTk1MSwibmJmIjoxNzMyMzM4MzUxLCJqdGkiOiJrSEZ4ZUROd0pTcHUzbWx6Iiwic3ViIjoiMSIsInBydiI6IjljNDI5ZTZhNjBjZDUyODU0NzNmMmM4YmM3MDFlYzA5NDhkZjRkOGMiLCJyb2xlIjoic3R1ZGVudHMifQ.Fa2Vloqm3cfvgmYRTf1COTj9Yt328TGQY_M8umGKwlk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Likitha",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "67689009312",
+											"type": "text"
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "Likkitha@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "student@123",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "student@123",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Integer molestie a ipsum sit amet volutpat. Vivamus non magna sem. Proin volutpat venenatis est, in efficitur turpis efficitur eget. Vivamus sollicitudin mattis eros. In lectus magna, accumsan vitae tempor sit amet, sagittis sed dui.",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Suspendisse semper ",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "quam at nisi vehicula ornare",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Fusce porttitor nunc id ",
+											"type": "text"
+										},
+										{
+											"key": "zip",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://yrpitsolutions.com/lms_api/api/student/update/23",
+									"protocol": "https",
+									"host": [
+										"yrpitsolutions",
+										"com"
+									],
+									"path": [
+										"lms_api",
+										"api",
+										"student",
+										"update",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student Profile Based on Token",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3N0dWRlbnQvbG9naW4iLCJpYXQiOjE3MzE5OTcyMjksImV4cCI6MTczMjAwMDgyOSwibmJmIjoxNzMxOTk3MjI5LCJqdGkiOiJuMTlEOWg5M2d1SExNNFRjIiwic3ViIjoiNSIsInBydiI6IjljNDI5ZTZhNjBjZDUyODU0NzNmMmM4YmM3MDFlYzA5NDhkZjRkOGMiLCJyb2xlIjoic3R1ZGVudHMifQ.lQOCCeO0JraFs2LIuzXm9QAeZkT21gBoL6r08t93PmA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Harika",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "mobile",
+											"value": "8574445744",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": "/C:/Users/pragn/Downloads/download.png",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "harika@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/student/user_profile",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"student",
+										"user_profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student Logout  Based on Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3N0dWRlbnQvbG9naW4iLCJpYXQiOjE3MzE5OTcyMjksImV4cCI6MTczMjAwMDgyOSwibmJmIjoxNzMxOTk3MjI5LCJqdGkiOiJuMTlEOWg5M2d1SExNNFRjIiwic3ViIjoiNSIsInBydiI6IjljNDI5ZTZhNjBjZDUyODU0NzNmMmM4YmM3MDFlYzA5NDhkZjRkOGMiLCJyb2xlIjoic3R1ZGVudHMifQ.lQOCCeO0JraFs2LIuzXm9QAeZkT21gBoL6r08t93PmA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Pragna",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "mobile",
+											"value": "8574445744",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": "/C:/Users/pragn/Downloads/download.png",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "pragna123@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/student/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"student",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student Refresh Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3N0dWRlbnQvbG9naW4iLCJpYXQiOjE3MzE5OTc0NTYsImV4cCI6MTczMjAwMTA1NiwibmJmIjoxNzMxOTk3NDU2LCJqdGkiOiJLQnpxOHFPNmdnMmJ4Yk1tIiwic3ViIjoiNSIsInBydiI6IjljNDI5ZTZhNjBjZDUyODU0NzNmMmM4YmM3MDFlYzA5NDhkZjRkOGMiLCJyb2xlIjoic3R1ZGVudHMifQ.BC0yFvlRfHP9YSYrOzxUKmP5v_WQOM9wFv7E24_u4-8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Pragna",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "mobile",
+											"value": "8574445744",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": "/C:/Users/pragn/Downloads/download.png",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "pragna123@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/student/refresh_token",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"student",
+										"refresh_token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Student Data",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/students",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Student Data by Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/students/10",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"students",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Student Data by Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3N0dWRlbnQvbG9naW4iLCJpYXQiOjE3MzI3NzEzNTksImV4cCI6MTczMjc3NDk1OSwibmJmIjoxNzMyNzcxMzU5LCJqdGkiOiJ6VU9DcHhUZmdkeXpJQ3FrIiwic3ViIjoiNiIsInBydiI6IjljNDI5ZTZhNjBjZDUyODU0NzNmMmM4YmM3MDFlYzA5NDhkZjRkOGMiLCJyb2xlIjoic3R1ZGVudHMifQ.xsERBXW7cCKgwLjasZ80SuvliGC5f_b3BE_vy4LLNkY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://yrpitsolutions.com/lms_api/api/delete_student_by_id/12",
+									"protocol": "https",
+									"host": [
+										"yrpitsolutions",
+										"com"
+									],
+									"path": [
+										"lms_api",
+										"api",
+										"delete_student_by_id",
+										"12"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Roles And Permission",
+			"item": [
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "Save Roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNTc3NjIsImV4cCI6MTczMjI2MTM2MiwibmJmIjoxNzMyMjU3NzYyLCJqdGkiOiJXV3dkeEFDV2FRUUFIaWVMIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.5LL-vT34EeDVuLAaIdXM0KyD6tZcJLU4qaf8VcxQ6lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "HR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/save_role",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"save_role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Roles by id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Accountant",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update_role_by_id/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update_role_by_id",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Roles",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIwODY1MDMsImV4cCI6MTczMjA5MDEwMywibmJmIjoxNzMyMDg2NTAzLCJqdGkiOiJYaDRQOE91WjhqV2U5NGVHIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.-HJ6WtC6OgMQ0saqgXmCdx_6xfmoANH_iaVXPLn40sI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Accountant",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get_all_role",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get_all_role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Roles by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Accountant",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get_role_by_id/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get_role_by_id",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Roles by id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Accountant",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/delete_role_by_id/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"delete_role_by_id",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Permissions",
+					"item": [
+						{
+							"name": "Save Permission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNTc3NjIsImV4cCI6MTczMjI2MTM2MiwibmJmIjoxNzMyMjU3NzYyLCJqdGkiOiJXV3dkeEFDV2FRUUFIaWVMIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.5LL-vT34EeDVuLAaIdXM0KyD6tZcJLU4qaf8VcxQ6lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Add Student",
+											"type": "text"
+										},
+										{
+											"key": "permission_title",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Add Student Created by Admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/save_permission",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"save_permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Permission by id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Save Student",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update_permission_by_id/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update_permission_by_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Permission",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get_all_permission",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get_all_permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Permission by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/get_permission_by_id/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_permission_by_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Permission by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIwOTQ2ODQsImV4cCI6MTczMjA5ODI4NCwibmJmIjoxNzMyMDk0Njg0LCJqdGkiOiJMZUpqb1dEb09Cc0JhVnVmIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Tbq62Vbcn1FdLWUgUVC-gJCP3ulBZziXBRLVpaZqCgE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/delete_permission_by_id/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"delete_permission_by_id",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Roles have Permissions",
+					"item": [
+						{
+							"name": "Assign Role have Permission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNTc3NjIsImV4cCI6MTczMjI2MTM2MiwibmJmIjoxNzMyMjU3NzYyLCJqdGkiOiJXV3dkeEFDV2FRUUFIaWVMIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.5LL-vT34EeDVuLAaIdXM0KyD6tZcJLU4qaf8VcxQ6lw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "role_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permission_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/assign_role_have_permission",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"assign_role_have_permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Role have Permission",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "role_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "permission_id",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get_all_role_have_permission",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get_all_role_have_permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role have Permission by Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIwOTQ2ODQsImV4cCI6MTczMjA5ODI4NCwibmJmIjoxNzMyMDk0Njg0LCJqdGkiOiJMZUpqb1dEb09Cc0JhVnVmIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Tbq62Vbcn1FdLWUgUVC-gJCP3ulBZziXBRLVpaZqCgE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "role_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "permission_id",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/get_role_have_permission_by_id/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"get_role_have_permission_by_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Role have Permission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIwOTQ2ODQsImV4cCI6MTczMjA5ODI4NCwibmJmIjoxNzMyMDk0Njg0LCJqdGkiOiJMZUpqb1dEb09Cc0JhVnVmIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Tbq62Vbcn1FdLWUgUVC-gJCP3ulBZziXBRLVpaZqCgE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "role_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permission_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/update_role_have_permission_by_id/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update_role_have_permission_by_id",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Role have Permission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIwOTQ2ODQsImV4cCI6MTczMjA5ODI4NCwibmJmIjoxNzMyMDk0Njg0LCJqdGkiOiJMZUpqb1dEb09Cc0JhVnVmIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Tbq62Vbcn1FdLWUgUVC-gJCP3ulBZziXBRLVpaZqCgE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "role_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "permission_id",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/delete_role_have_permission_by_id/4",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"delete_role_have_permission_by_id",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Exam Type",
+			"item": [
+				{
+					"name": "Save Exam Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3lycGl0c29sdXRpb25zLmNvbS9sbXNfYXBpL2FwaS91c2VyL2xvZ2luIiwiaWF0IjoxNzMyMzYyNjkwLCJleHAiOjE3MzIzNjYyOTAsIm5iZiI6MTczMjM2MjY5MCwianRpIjoicFZ4MnFWbnd3Q2E4bjFYSCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.RM93BbEWaLW86PN6ClnFFfzGAhgXL7mdP7qYBWdd9Tc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_name",
+									"value": "Essay Exams",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/pragn/Downloads/essay.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://yrpitsolutions.com/lms_api/api/user/save_exam_type",
+							"protocol": "https",
+							"host": [
+								"yrpitsolutions",
+								"com"
+							],
+							"path": [
+								"lms_api",
+								"api",
+								"user",
+								"save_exam_type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Exam Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzYwMjQsImV4cCI6MTczMjI3OTYyNCwibmJmIjoxNzMyMjc2MDI0LCJqdGkiOiJCMkt5RkxZa1hHT2Y3dnFhIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.N4F0IJoDAqjiuFsWDf6_V5YqrIgAAmYq56XeHOHu22A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_name",
+									"value": "Q & A",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/pragn/Downloads/exam-ians.jpg"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_exam_type_by_id/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_exam_type_by_id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Exam Types",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_exam_type",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_exam_type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Exam Type by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_exam_type_by_id/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_exam_type_by_id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Exam Type by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzYwMjQsImV4cCI6MTczMjI3OTYyNCwibmJmIjoxNzMyMjc2MDI0LCJqdGkiOiJCMkt5RkxZa1hHT2Y3dnFhIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.N4F0IJoDAqjiuFsWDf6_V5YqrIgAAmYq56XeHOHu22A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_exam_type_by_id/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_exam_type_by_id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Save Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3lycGl0c29sdXRpb25zLmNvbS9sbXNfYXBpL2FwaS91c2VyL2xvZ2luIiwiaWF0IjoxNzMyNzkwNjU1LCJleHAiOjE3MzI3OTQyNTUsIm5iZiI6MTczMjc5MDY1NSwianRpIjoiWkpTUWJpTE1qckZaTlRsQyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.5TWubAB6qJePTK51vX3zZYYUWCEHYyzqKpF_-UHXmck",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category_name",
+									"value": "OMR ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://yrpitsolutions.com/lms_api/api/user/save_category",
+							"protocol": "https",
+							"host": [
+								"yrpitsolutions",
+								"com"
+							],
+							"path": [
+								"lms_api",
+								"api",
+								"user",
+								"save_category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIxMDM0NzIsImV4cCI6MTczMjEwNzA3MiwibmJmIjoxNzMyMTAzNDcyLCJqdGkiOiJPdFVQMUUzejNzSFJpU3JLIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.xAL7_5j2PS_IrVokxWSmZIbFJvRkqElUkuJiqbBIQNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_categories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIxMDM0NzIsImV4cCI6MTczMjEwNzA3MiwibmJmIjoxNzMyMTAzNDcyLCJqdGkiOiJPdFVQMUUzejNzSFJpU3JLIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.xAL7_5j2PS_IrVokxWSmZIbFJvRkqElUkuJiqbBIQNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_category_by_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_category_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories by Exam_Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIxMDM0NzIsImV4cCI6MTczMjEwNzA3MiwibmJmIjoxNzMyMTAzNDcyLCJqdGkiOiJPdFVQMUUzejNzSFJpU3JLIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.xAL7_5j2PS_IrVokxWSmZIbFJvRkqElUkuJiqbBIQNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_categories_by_exam_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_categories_by_exam_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Categories by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzY0OTMsImV4cCI6MTczMjI4MDA5MywibmJmIjoxNzMyMjc2NDkzLCJqdGkiOiJiUThxa1BkTWNIaEZpTVpGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.2smzD0dzEJq50k_S_vDym3i3gpNKknQ1KEdvfJmEd54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_category_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_category_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzY0OTMsImV4cCI6MTczMjI4MDA5MywibmJmIjoxNzMyMjc2NDkzLCJqdGkiOiJiUThxa1BkTWNIaEZpTVpGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.2smzD0dzEJq50k_S_vDym3i3gpNKknQ1KEdvfJmEd54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_name",
+									"value": "History",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_category_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_category_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub Category",
+			"item": [
+				{
+					"name": "Save Sub Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3lycGl0c29sdXRpb25zLmNvbS9sbXNfYXBpL2FwaS91c2VyL2xvZ2luIiwiaWF0IjoxNzMyNzkyMzA4LCJleHAiOjE3MzI3OTU5MDgsIm5iZiI6MTczMjc5MjMwOCwianRpIjoiQ3lWVWVSN2VTMWY2Y1MzdiIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.RX6FOzecNKy5wpGzU2xFS9z95y1jHgcWZNzZ7zgVp-0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_name",
+									"value": "Addition",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://yrpitsolutions.com/lms_api/api/user/save_sub_category",
+							"protocol": "https",
+							"host": [
+								"yrpitsolutions",
+								"com"
+							],
+							"path": [
+								"lms_api",
+								"api",
+								"user",
+								"save_sub_category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Sub Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_sub_categories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_sub_categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Category by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_sub_category_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_sub_category_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Category by Category Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_sub_categories_by_category_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_sub_categories_by_category_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sub Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzY0OTMsImV4cCI6MTczMjI4MDA5MywibmJmIjoxNzMyMjc2NDkzLCJqdGkiOiJiUThxa1BkTWNIaEZpTVpGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.2smzD0dzEJq50k_S_vDym3i3gpNKknQ1KEdvfJmEd54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_name",
+									"value": "Subtraction",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_sub_category_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_sub_category_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sub Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzY0OTMsImV4cCI6MTczMjI4MDA5MywibmJmIjoxNzMyMjc2NDkzLCJqdGkiOiJiUThxa1BkTWNIaEZpTVpGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.2smzD0dzEJq50k_S_vDym3i3gpNKknQ1KEdvfJmEd54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_sub_category_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_sub_category_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Save Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3lycGl0c29sdXRpb25zLmNvbS9sbXNfYXBpL2FwaS91c2VyL2xvZ2luIiwiaWF0IjoxNzMyNzkwNjU1LCJleHAiOjE3MzI3OTQyNTUsIm5iZiI6MTczMjc5MDY1NSwianRpIjoiWkpTUWJpTE1qckZaTlRsQyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.5TWubAB6qJePTK51vX3zZYYUWCEHYyzqKpF_-UHXmck",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "Trigonometry",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Trigonometry",
+									"type": "text"
+								},
+								{
+									"key": "banner_image",
+									"type": "file",
+									"src": "/C:/Users/pragn/Downloads/maths.jpg"
+								},
+								{
+									"key": "video_link",
+									"value": "http://abc.com",
+									"type": "text"
+								},
+								{
+									"key": "vimeo_video",
+									"value": "http://abc.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://yrpitsolutions.com/lms_api/api/user/save_course",
+							"protocol": "https",
+							"host": [
+								"yrpitsolutions",
+								"com"
+							],
+							"path": [
+								"lms_api",
+								"api",
+								"user",
+								"save_course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzY0OTMsImV4cCI6MTczMjI4MDA5MywibmJmIjoxNzMyMjc2NDkzLCJqdGkiOiJiUThxa1BkTWNIaEZpTVpGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.2smzD0dzEJq50k_S_vDym3i3gpNKknQ1KEdvfJmEd54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "Vedic Maths",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Vedic Maths",
+									"type": "text"
+								},
+								{
+									"key": "banner_image",
+									"type": "file",
+									"src": "/C:/Users/pragn/Downloads/vedic.png"
+								},
+								{
+									"key": "video_link",
+									"value": "http://vedicmaths.com",
+									"type": "text"
+								},
+								{
+									"key": "vimeo_video",
+									"value": "http://vedicmaths.com",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_course_id/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_course_id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNzY0OTMsImV4cCI6MTczMjI4MDA5MywibmJmIjoxNzMyMjc2NDkzLCJqdGkiOiJiUThxa1BkTWNIaEZpTVpGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.2smzD0dzEJq50k_S_vDym3i3gpNKknQ1KEdvfJmEd54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_course_by_id/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_course_by_id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_courses",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_courses_by_id/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_courses_by_id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses by Exam Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_courses_by_exam_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_courses_by_exam_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Save Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNTc3NjIsImV4cCI6MTczMjI2MTM2MiwibmJmIjoxNzMyMjU3NzYyLCJqdGkiOiJXV3dkeEFDV2FRUUFIaWVMIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.5LL-vT34EeDVuLAaIdXM0KyD6tZcJLU4qaf8VcxQ6lw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "abc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "948771112",
+									"type": "text"
+								},
+								{
+									"key": "validity_period",
+									"value": "1_year",
+									"type": "text"
+								},
+								{
+									"key": "receipt",
+									"type": "file",
+									"src": "/C:/Users/pragn/Downloads/receipt.pdf"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/save_orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"save_orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNTEwMDYsImV4cCI6MTczMjI1NDYwNiwibmJmIjoxNzMyMjUxMDA2LCJqdGkiOiJtb2h6UHNtM1ZSWFlHSnNlIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.qPryog3dzeGsreKHXOaGpLN9rIFsVH20v_Ve2onbe8o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "def@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9900909090",
+									"type": "text"
+								},
+								{
+									"key": "validity_period",
+									"value": "6_months",
+									"type": "text"
+								},
+								{
+									"key": "receipt",
+									"type": "file",
+									"src": "/C:/Users/pragn/Downloads/receipt.pdf",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_order_by_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_order_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzIyNTEwMDYsImV4cCI6MTczMjI1NDYwNiwibmJmIjoxNzMyMjUxMDA2LCJqdGkiOiJtb2h6UHNtM1ZSWFlHSnNlIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.qPryog3dzeGsreKHXOaGpLN9rIFsVH20v_Ve2onbe8o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_order_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_order_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_order_by_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_order_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/user/get_all_order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_order",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enquiry",
+			"item": [
+				{
+					"name": "Save Enquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Shinchan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "shinchan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "99008877651",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/save_Enquiry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"save_Enquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Enquiry by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_Enquiry_by_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_Enquiry_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Enquiry",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_Enquiry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_Enquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Enquiry by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_Enquiry_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_Enquiry_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test Types",
+			"item": [
+				{
+					"name": "Save Test Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODk0NTIsImV4cCI6MTczMjY5MzA1MiwibmJmIjoxNzMyNjg5NDUyLCJqdGkiOiIzMFFtTGR6THBXdllsSXFYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.LalYRCXfls19fFczCAc35zk_n2_RN8ty2S1He6CJvoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test_type_name",
+									"value": "Free Test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/save_test_type",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"save_test_type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Test Type by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODk0NTIsImV4cCI6MTczMjY5MzA1MiwibmJmIjoxNzMyNjg5NDUyLCJqdGkiOiIzMFFtTGR6THBXdllsSXFYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.LalYRCXfls19fFczCAc35zk_n2_RN8ty2S1He6CJvoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test_type_name",
+									"value": "Free  Test",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_test_type_by_id/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_test_type_by_id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Test Type by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODk0NTIsImV4cCI6MTczMjY5MzA1MiwibmJmIjoxNzMyNjg5NDUyLCJqdGkiOiIzMFFtTGR6THBXdllsSXFYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.LalYRCXfls19fFczCAc35zk_n2_RN8ty2S1He6CJvoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_test_type_by_id/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_test_type_by_id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Test Type by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_test_type_by_id/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_test_type_by_id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Test Type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_test_type",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_test_type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Save Tests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3lycGl0c29sdXRpb25zLmNvbS9sbXNfYXBpL2FwaS91c2VyL2xvZ2luIiwiaWF0IjoxNzMyNzkwNjU1LCJleHAiOjE3MzI3OTQyNTUsIm5iZiI6MTczMjc5MDY1NSwianRpIjoiWkpTUWJpTE1qckZaTlRsQyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.5TWubAB6qJePTK51vX3zZYYUWCEHYyzqKpF_-UHXmck",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test_type_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "exam_type_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "vimeo_link",
+									"value": "http://livetest.com",
+									"type": "text"
+								},
+								{
+									"key": "youtube_link",
+									"value": "http://youtube.com",
+									"type": "text"
+								},
+								{
+									"key": "time_picker_start_date",
+									"value": "12:00:00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "time_picker_end_date",
+									"value": "15:00:00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "date_picker_start_time",
+									"value": "2024-12-01",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "date_picker_end_time",
+									"value": "2024-12-03",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from section",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://yrpitsolutions.com/lms_api/api/user/save_test",
+							"protocol": "https",
+							"host": [
+								"yrpitsolutions",
+								"com"
+							],
+							"path": [
+								"lms_api",
+								"api",
+								"user",
+								"save_test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tests by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODI1MDksImV4cCI6MTczMjY4NjEwOSwibmJmIjoxNzMyNjgyNTA5LCJqdGkiOiJkYVkzVk9FbjNKdGV0VGU4Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.8t2lRrqRmIEhOHCo9tidJPvdbiZM_xCj5UsujXrknUY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "test_type_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "exam_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "vimeo_link",
+									"value": "http://unittest.com",
+									"type": "text"
+								},
+								{
+									"key": "youtube_link",
+									"value": "http://youtube.com",
+									"type": "text"
+								},
+								{
+									"key": "time_picker_start_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "time_picker_end_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "date_picker_start_time",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "date_picker_end_time",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "deactive",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_test_by_id/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_test_by_id",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tests by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2MTgxNzksImV4cCI6MTczMjYyMTc3OSwibmJmIjoxNzMyNjE4MTc5LCJqdGkiOiJKYkgzRGNaT3lNZ015T3FiIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.8Jm_WgkOgIdVHijNmADOIEmJq08oe45LfnCydClqWdg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_test_by_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_test_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tests by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_test_by_id/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_test_by_id",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tests by Id Test Type Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_tests_by_test_type/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_tests_by_test_type",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status by Test Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_status_by_id/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_status_by_id",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_tests",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_tests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Save Question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODk0NTIsImV4cCI6MTczMjY5MzA1MiwibmJmIjoxNzMyNjg5NDUyLCJqdGkiOiIzMFFtTGR6THBXdllsSXFYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.LalYRCXfls19fFczCAc35zk_n2_RN8ty2S1He6CJvoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "exam_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "test_type_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "What is Maths ?",
+									"type": "text"
+								},
+								{
+									"key": "option1",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "option2",
+									"value": "b",
+									"type": "text"
+								},
+								{
+									"key": "option3",
+									"value": "c",
+									"type": "text"
+								},
+								{
+									"key": "option4",
+									"value": "d",
+									"type": "text"
+								},
+								{
+									"key": "option5",
+									"value": "e",
+									"type": "text"
+								},
+								{
+									"key": "option6",
+									"value": "f",
+									"type": "text"
+								},
+								{
+									"key": "correct_answer",
+									"value": "d",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/save_question",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"save_question"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODAzMzIsImV4cCI6MTczMjY4MzkzMiwibmJmIjoxNzMyNjgwMzMyLCJqdGkiOiJJZVpUVWdQcVpIUllmNFNpIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Za1OCJ0bAz8E5iLVKefhZUtX8CBsa4M4SsFQksLMRgY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "exam_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "test_type_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "What is Trignometry ?",
+									"type": "text"
+								},
+								{
+									"key": "option1",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "option2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "option3",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "option4",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "option5",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "option6",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "correct_answer",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update_question_by_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update_question_by_id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question by Id Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvbG9naW4iLCJpYXQiOjE3MzI2ODAzMzIsImV4cCI6MTczMjY4MzkzMiwibmJmIjoxNzMyNjgwMzMyLCJqdGkiOiJJZVpUVWdQcVpIUllmNFNpIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoidXNlciJ9.Za1OCJ0bAz8E5iLVKefhZUtX8CBsa4M4SsFQksLMRgY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete_question_by_id/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete_question_by_id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Question by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_question_by_id/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_question_by_id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Question by Test Type Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_questions_by_test_type_id/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_questions_by_test_type_id",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Questions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get_all_questions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get_all_questions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
